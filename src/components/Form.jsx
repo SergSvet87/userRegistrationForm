@@ -67,11 +67,11 @@ export const Form = ({ getUserData }) => {
 
   // Обробник втрати фокуса
   const blurHandler = (e) => {
-    if (e.target.name === 'email') {
+    if (e.target.id === 'email') {
       setEmailDirty(true)
-    } else if (e.target.name === 'password') {
+    } else if (e.target.id === 'password') {
       setPasswordDirty(true)
-    } else if (e.target.name === 'confirmPassword') {
+    } else if (e.target.id === 'passwordConfirmation') {
       setPasswordConfirmDirty(true)
     }
   }
