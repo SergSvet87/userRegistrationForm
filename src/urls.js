@@ -1,0 +1,1 @@
+export const USER_URL = 'https://react-course-api.azurewebsites.net/user'
