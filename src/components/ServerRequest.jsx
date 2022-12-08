@@ -5,15 +5,15 @@ import { useFetchPostData } from '../hooks/useFetchPostData'
 import { USER_URL } from '../urls'
 import { ErrorMessage } from '../ui/ErrorMessage'
 
-export const ServerRequest = ({ userInfo, serverResponseSetter }) => {
+export const ServerRequest = ({ userInfo, getServerResponse }) => {
   const [userData, setUserData] = useState(userInfo)
-  const {response, loading, error, errorMessage} = useFetchPostData(
+  const { response, loading, error, errorMessage } = useFetchPostData(
     USER_URL,
-    userData,
+    userData
   )
 
   function resultReceived(response) {
-    serverResponseSetter(response)
+    getServerResponse(response)
   }
 
   useEffect(() => {
@@ -28,5 +28,11 @@ export const ServerRequest = ({ userInfo, serverResponseSetter }) => {
     resultReceived(response)
   }
 
-  return error && <div className="error">{errorMessage} <ErrorMessage errorNumber={error.cause}/></div>
+  return error ? (
+    <div className="error">
+      {errorMessage} <ErrorMessage errorNumber={error.cause} />
+    </div>
+  ) : (
+    ''
+  )
 }

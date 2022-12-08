@@ -16,7 +16,7 @@ export default function App() {
 
   return (
     <main>
-      {responseServer ? <Modal /> :
+      {responseServer ? <Modal res={responseServer} /> :
         <Form getUserData={getUserData} />}
       <ErrorBoundary>
         {userData ? <ServerRequest userInfo={userData} getServerResponse={getServerResponse} /> : ''}

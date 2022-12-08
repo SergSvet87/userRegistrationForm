@@ -10,7 +10,7 @@ export const useFetchPostData = (url, userData) => {
     const user = {
       name: userData.email,
       password: userData.password,
-      passwordConfirmation: userData.passwordConfirmation,
+      passwordConfirmation: userData.passwordConfirm,
     }
 
     setLoading(true)
@@ -38,7 +38,6 @@ export const useFetchPostData = (url, userData) => {
         setLoading(false)
       })
       .catch((err) => {
-        console.dir(err)
         setLoading(false)
         setError(err)
         setErrorMessage(err.message)

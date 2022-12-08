@@ -3,7 +3,7 @@ export const ErrorMessage = ({ errorNumber }) => {
     case 500:
       return 'Спробуй ще раз!'
     case 501:
-      return 'Запрос не опрацьований! Спробуй ще раз!'
+      return 'Запит не опрацьований! Спробуй ще раз!'
     case 400:
       return 'Дані не вірні! :( '
     case 401:
